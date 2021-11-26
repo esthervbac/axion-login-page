@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import axios from 'axios'
 import '../../css/listas.css'
 import '../../Componentes/ListaFoods/ListaFoods'
@@ -25,9 +24,9 @@ export default class ListaFoods extends Component {
 
         const { error, foods } = this.state;
 
-        // Print errors if any
+        // Erros se ocorrer algum
         if (error) {
-        return <div className="mensag-erro">Um erro ocorreu: {error.message}</div>;
+          return <div className="mensag-erro">Um erro ocorreu: {error.message}</div>;
         }
 
         return (
