@@ -32,19 +32,19 @@ export default class ListaFoods extends Component {
 
         return (
             <div className="conteudo">
-                <div className="lista">
-                    <p>LIST OF FOODS</p>
-                    <div className="linha"></div>
-                    <div className="lista-imagens">
+                <div className="listagem">
+                  <p>LIST OF FOODS</p>
+                  <div className="linha"></div>
+                    <section className="cards">
                     {this.state.foods.map(foods => (
-                    <>
-                        <div class="div-img"><img key={foods.id} src={foods.link} alt="Imagens da Lista de Comidas" /></div>
+                      <article>
+                        <img key={foods.id} className="imagem" src={foods.link} alt="Imagens da Lista de Comidas" />
                         <p key={foods.name} className="texto-imagem">{foods.name}</p>
-                    </>
+                      </article>
                     ))}
-                    </div>
-                </div>
+                    </section>
+                  </div>
             </div>
         );
+      }
     }
-}

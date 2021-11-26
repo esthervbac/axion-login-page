@@ -1,60 +1,65 @@
 .conteudo {
     width: 100vw;
+    height: 100vh;
     background-color: #F9F9F9;
-    position: relative;
 }
 
-.lista {
-    max-width: 940px;
-    max-height: 670px;
-    width: 100%;
-    height: 670px;
-    background-color: red;
-    position: absolute;
-    margin-left: 17vw;
-    margin-top: 6vh;
+.listagem {
+    background-color: #F9F9F9;
 }
 
-.lista p {
+.listagem p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 18px;
     color: #5F5F5F;
+    margin-top: 6vh;
+    margin-left: 17.5vw;
 }
 
 .linha {
     position: absolute;
-    width: 66vw;
+    width: 65vw;
     height: 0.9vh;
     background: linear-gradient(45deg, #AE23A9, #DC4E1B);
-    margin-top: 1vh;
-}
-
-.lista-imagens {
-    max-width: 940px;
-    width: 100%;
-    height: 650px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
     margin-top: 2vh;
-    margin-left: 1.5vw;
-    background-color: blue;
-    position: absolute;
+    margin-left: 17.5vw;
 }
 
-div.div-img img {
-    max-width: 273px;
-    max-height: 273px;
-    width: 100%;
-    position: absolute;
-}
+/* Grid styles -------------------------------------------------*/
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+
+/* -------------------------------------------------------------*/
+
+ .cards {
+    max-width: 900px;
+    margin: 9vh 17vw 30px;
+  }
+  
+  article {
+    position: relative;
+  }
+
+img.imagem {
+    width: 276px;
+    height: 276px;
+    object-fit: cover;
+    margin-left: 0.5vw;
+ }
 
 p.texto-imagem {
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
     font-size: 28px;
     color: #FFFFFF;
-    margin-top: 35vh;
-    margin-left: -18.5vw;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    margin-left: 1vw;
 }
