@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 100vw;
+    max-height: 100vh;
+    background-color: #F9F9F9;
+    position: absolute;
+}
+
+.container img {
+    max-width: 1914px;
+    max-height: 988px;
+    width: 60%;
+    margin-left: 40%;
+    margin-top: 15%;
+}
+
+.card-cadastro {
+    width: 405px;
+    height: 705px;
+    background-color: red;
+    position: absolute;
+    margin-top: -92.8vh;
+    margin-left: 12.6vw;
+}
+
+.formulario-registro {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-registro img {
+    max-width: 642px;
+    max-height: 81px;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 13.9%;
+}
+
+.formulario-registro label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #5F5F5F;
+    margin-top: 7.5vh;
+    margin-left: 2.6vw;
+}
+
+.formulario-registro input {
+    max-width: 333px;
+    width: 100%;
+    height: 100%;
+    margin-top: 1.2vh;
+    margin-left: 2.6vw;
+}

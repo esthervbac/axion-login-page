@@ -1,0 +1,16 @@
+.div-404 {
+    width: 60vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 21vw;
+}
+
+h1, span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #5F5F5F;
+    text-align: center;
+}
