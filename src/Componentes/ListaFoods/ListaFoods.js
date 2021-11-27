@@ -4,20 +4,24 @@ import '../../css/listas.css'
 import '../../Componentes/ListaFoods/ListaFoods'
 
 export default class ListaFoods extends Component {
+  
+  state = {
+    foods: [],
+    error: null,
+  };
+  
+  
+  // Fetch foods depois que o componente é montado
+  componentDidMount = async () => {
 
-    state = {
-        foods: [],
-        error: null,
-      };
+      const { REACT_APP_BACKEND_URL_ID_PAGF } = process.env;
 
-    // Fetch foods depois que o componente é montado
-    componentDidMount = async () => {
-    try {
-      const response = await axios.get('http://localhost:1337/foods');
-      this.setState({ foods: response.data });
-    } catch (error) {
-      this.setState({ error });
-    }
+        try {
+          const response = await axios.get(`${REACT_APP_BACKEND_URL_ID_PAGF}`);
+          this.setState({ foods: response.data });
+        } catch (error) {
+        this.setState({ error });
+        }
   };
     
     render() {

@@ -10,10 +10,13 @@ export default class ListaPeople extends Component {
         error: null,
       };
 
-    // Fetch foods depois que o componente é montado
+    // Fetch people depois que o componente é montado
     componentDidMount = async () => {
+
+        const { REACT_APP_BACKEND_URL_ID_PAGP } = process.env;
+
     try {
-      const response = await axios.get('http://localhost:1337/people');
+      const response = await axios.get(`${REACT_APP_BACKEND_URL_ID_PAGP}`);
       this.setState({ people: response.data });
     } catch (error) {
       this.setState({ error });

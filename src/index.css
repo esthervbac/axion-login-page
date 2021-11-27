@@ -8,9 +8,25 @@ body {
   background-color: #F9F9F9;;
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden; 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+body::-webkit-scrollbar {
+  width: 7px;               /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #f9f9f9;        /* color of the tracking area */
+  opacity: 100%;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #c5c5c5;    /* color of the scroll thumb */
+  border-radius: 20px;       /* roundness of the scroll thumb */
+  border: 1px solid #c5c5c5;  /* creates padding around scroll thumb */
 }
