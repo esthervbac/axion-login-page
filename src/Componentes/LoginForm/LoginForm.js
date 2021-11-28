@@ -12,13 +12,6 @@ const LoginForm = () => {
     const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
     const history = useNavigate();
-    const [validarCampo, setValidarCampo] = useState("none");
-
-    const inputLabel = (e) => {
-        setIdentifier(e.target.value);
-        setPassword(e.target.value);
-        setValidarCampo("none");
-    }
 
     async function Logando() {
 
@@ -37,6 +30,14 @@ const LoginForm = () => {
         localStorage.setItem("user-info", JSON.stringify(result));
     }
 
+    // Função para validar campos do formulário Login 
+    const validarCamposLogin = () => {
+        
+        if ((identifier == "") && (password == "")) {
+            alert("Todos os campos devem ser preenchidos!");
+        }
+    }
+
     // Função para mostrar senha ao marcar checkbox
     const mostrarSenha = () => {
         document.getElementById('showPassword').onclick = function () {
@@ -52,19 +53,19 @@ const LoginForm = () => {
         <div className="container">
             <img src={imagemFundo} alt="Imagem de fundo" />
             <div className="card-cadastro">
-                <div className="cadastro">
+                <form className="cadastro" name="formulario" onSubmit={validarCamposLogin}>
                     <img src={Logo} alt="Logo Orange" />
                     {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
                     <div className="inputLabel">
                         <label>Email</label>
                         <input
                             type="email"
+                            id="email"
                             value={identifier}
                             placeholder="seunome@email.com"
                             onChange={(e) => setIdentifier(e.target.value)}
                         />
                         <img src={iconemail} alt="Icon de Email" />
-                        <p style={{ display: validarCampo }}>Campo obrigatório</p>
                     </div>
                     <div className="inputLabel">
                         <label>Senha</label>
@@ -76,7 +77,6 @@ const LoginForm = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                         <img src={iconpassword} alt="Icon de Password" />
-                        <p style={{ display: validarCampo }}>Campo obrigatório</p>
                     </div>
                     <div className="inputMostrarSenha">
                         <input type="checkbox" name="mostrarSenha" id="showPassword" onClick={mostrarSenha} />
@@ -89,7 +89,7 @@ const LoginForm = () => {
                     </div>
                     <Link to="/cadastrar" style={{ textDecoration: 'none' }} className="btn-login-cadastro">Cadastrar</Link>
                     <h4 className="termos-texto">Termos de Uso • Política de Privacidade</h4>
-                </div>
+                </form>
             </div>
         </div>
     );

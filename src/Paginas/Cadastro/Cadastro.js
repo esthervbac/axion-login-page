@@ -39,12 +39,22 @@ const Cadastro = () => {
         result = await result.JSON();
         localStorage.setItem("user-info",JSON.stringify(result));
     }
+
+    // Função para validar campos do formulário Login 
+    const validarCamposCadastro = () => {
+        
+        if ((username == "") && (email == "") && (password == "")) {
+            alert("Todos os campos devem ser preenchidos!");
+        } else {
+            alert("Seu Cadastro foi realizado com sucesso!");
+        }
+    }
     
     return (
         <div className="container">
             <img src={imagemFundo} />
                 <div className="card-cadastro">
-                    <div className="cadastro">
+                    <form className="cadastro" onSubmit={validarCamposCadastro}>
                         <img src={Logo} alt="Logo Orange" />
                         {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
                         <div className="inputLabel">
@@ -83,7 +93,7 @@ const Cadastro = () => {
                         <button type="submit" onClick={Cadastrar}>Cadastrar</button>
                         <NavLink to="/" className="link-login" style={{ textDecoration: 'none' }}>Faça seu Login Clicando Aqui</NavLink>
                         <h4>Termos de Uso • Política de Privacidade</h4>
-                    </div>
+                    </form>
                 </div>
         </div>
     );
