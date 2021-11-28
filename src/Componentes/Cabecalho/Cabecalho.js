@@ -13,9 +13,9 @@ export default class Cabecalho extends Component {
                 <img src={logo} alt="Logo Orange" />
                     <nav>
                         <ul className="nav-links">
-                            <NavLink to="/foods" style={{ textDecoration: 'none' }}><li>FOODS</li></NavLink>
-                            <NavLink to="/people" style={{ textDecoration: 'none' }}><li>PEOPLE</li></NavLink>
-                            <NavLink to="/places" style={{ textDecoration: 'none' }}><li>PLACES</li></NavLink>
+                            <NavLink to="/foods" style={{ textDecoration: 'none' }} activeStyle={{ fontWeight: "700" }}><li>FOODS</li></NavLink>
+                            <NavLink to="/people" style={{ textDecoration: 'none' }} activeStyle={{ fontWeight: "700" }}><li>PEOPLE</li></NavLink>
+                            <NavLink to="/places" style={{ textDecoration: 'none' }} activeStyle={{ fontWeight: "700" }}><li>PLACES</li></NavLink>
                         </ul>
                     </nav>
             </div>

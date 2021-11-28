@@ -7,7 +7,7 @@
     max-width: 100vw;
     max-height: 100vh;
     background-color: #F9F9F9;
-    position: absolute;
+    position: relative;
 }
 
 .container img {
@@ -16,43 +16,115 @@
     width: 60%;
     margin-left: 40%;
     margin-top: 15%;
+    position: absolute;
 }
 
 .card-cadastro {
-    width: 405px;
-    height: 705px;
-    background-color: red;
+    max-width: 405px;
+    height: 655px;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 0 1em rgb(179, 170, 170);
     position: absolute;
-    margin-top: -92.8vh;
+    margin-top: 7.4vh;;
     margin-left: 12.6vw;
+    margin-bottom: 2vh;
 }
 
-.formulario-registro {
+.cadastro {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    margin-top: 20.8vh;
+    margin-left: 0.2vw;
 }
 
-.formulario-registro img {
+.cadastro img {
     max-width: 642px;
     max-height: 81px;
     width: 50%;
-    margin-left: 10%;
-    margin-top: 13.9%;
+    margin-left: 2.7vw;
+    margin-top: -11.8vh;
 }
 
-.formulario-registro label {
+.inputLabel {
+    margin-bottom: 7vh;
+    margin-left: -0.1vw;
+    position: relative;
+}
+
+.cadastro label {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 16px;
     color: #5F5F5F;
-    margin-top: 7.5vh;
+    margin-top: 20.6vh;
     margin-left: 2.6vw;
 }
 
-.formulario-registro input {
-    max-width: 333px;
+.cadastro input {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #5F5F5F;
+    max-width: 303px;
+    max-height: 45px;
     width: 100%;
     height: 100%;
     margin-top: 1.2vh;
     margin-left: 2.6vw;
+    padding-left: 1.3vw;
+}
+
+.inputLabel img {
+    position:absolute;
+    bottom: -0.8vw;
+    right: 60px;
+    width: 20px;
+    height: 18px;
+}
+
+.cadastro button {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-weight: 600;
+    background: linear-gradient(45deg, #AE23A9, #DC4E1B);
+    max-width: 333px;
+    max-height: 53px;
+    width: 100%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vh;
+    border: none;
+    cursor: pointer;
+}
+
+.link-login {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #b7b7b7;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 5vh;
+    margin-left: 2.6vw;
+}
+
+.link-login a {
+    color: rgb(95, 83, 83);
+}
+
+.link-login a:hover {
+    font-weight: bold;
+    color: red;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #b7b7b7;
+    font-weight: 600;
+    margin-left: 2.6vw;
+    margin-top: 8vh;
 }

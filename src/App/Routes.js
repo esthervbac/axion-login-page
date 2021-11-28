@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { isAuthenticated } from '../Servicos/Auth';
 import Home from '../Paginas/Home/Home'
 import Foods from '../Paginas/Foods/Foods'
 import Places from '../Paginas/Places/Places'

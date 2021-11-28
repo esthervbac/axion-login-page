@@ -1,54 +1,92 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useNavigate, redirectUser } from "react-router-dom";
 import Logo from '../../imgs/logo.png'
 import imagemFundo from '../../imgs/bg.jpg'
+import iconusername from '../../imgs/user.png'
+import iconemail from '../../imgs/mail.png'
+import iconpassword from '../../imgs/lock.png'
 import '../../css/cadastro.css'
 import '../../index.css'
 
-export default class Cadastro extends Component {
-    state = {
-        username: "",
-        email: "",
-        password: "",
-        error: ""
-    };
+const Cadastro = () => {
 
-    handleRegistro = e => {
-        e.preventDefault();
-    };
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const history = useNavigate();
+    const [validarCampo, setValidarCampo] = useState("none");
 
-    render() {
-        return (
-            <div className="container">
-                <img src={imagemFundo} alt="Imagem de fundo de um computador" />
-                <div className="card-cadastro">
-                    <form className="formulario-registro" onSubmit={this.handleRegistro}>
-                        <img className="logo-cadastro" src={Logo} alt="Logo Orange" />
-                        {this.state.error && <p>{this.state.error}</p>}
-                        <label>Usuário</label>
-                        <input
-                            type="text"
-                            placeholder="Nome de usuário"
-                            onChange={e => this.setState({ username: e.target.value })}
-                        />
-                        <label>Email</label>
-                        <input
-                            type="email"
-                            placeholder="Endereço de e-mail"
-                            onChange={e => this.setState({ email: e.target.value })}
-                        />
-                        <label>Senha</label>
-                        <input
-                            type="password"
-                            placeholder="Senha"
-                            onChange={e => this.setState({ password: e.target.value })}
-                        />
-                        <button type="submit">Cadastrar</button>
-                        <hr />
-                        <Link to="/">Fazer login</Link>
-                    </form>
-                </div>
-            </div>
-        );
+    const inputLabel = (e) => {
+        setUsername(e.target.value);
+        setEmail(e.target.value);
+        setPassword(e.target.value);
+        setValidarCampo("none");
     }
+
+    async function Cadastrar() {
+
+        const { REACT_APP_BACKEND_URL_ID_REGISTER } = process.env;
+
+        let item = { username, email, password }
+        const result = await fetch(`${REACT_APP_BACKEND_URL_ID_REGISTER}`, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(item)
+        });
+        result = await result.json();
+        localStorage.setItem("user-info",JSON.stringify(result));
+    }
+    
+    return (
+        <div className="container">
+            <img src={imagemFundo} />
+                <div className="card-cadastro">
+                    <div className="cadastro">
+                        <img src={Logo} alt="Logo Orange" />
+                        {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
+                        <div className="inputLabel">
+                            <label>Usuário</label>
+                            <input
+                                type="text"
+                                value={username}
+                                placeholder="Nome de Usuário"
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <img src={iconusername} alt="Icon de Username" />
+                            <p style={{display:validarCampo}}>Campo obrigatório</p>
+                        </div>
+                        <div className="inputLabel">
+                            <label>Email</label>
+                            <input
+                                type="email"
+                                value={email}
+                                placeholder="seunome@email.com"
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <img src={iconemail} alt="Icon de Email" />
+                            <p style={{display:validarCampo}}>Campo obrigatório</p>
+                        </div>
+                        <div className="inputLabel">
+                            <label>Senha</label>
+                            <input
+                                type="password"
+                                value={password}
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <img src={iconpassword} alt="Icon de Password" />
+                            <p style={{display:validarCampo}}>Campo obrigatório</p>
+                        </div>
+                        <button type="submit" onClick={Cadastrar}>Cadastrar</button>
+                        <NavLink to="/" className="link-login" style={{ textDecoration: 'none' }}>Faça seu Login Clicando Aqui</NavLink>
+                        <h4>Termos de Uso • Política de Privacidade</h4>
+                    </div>
+                </div>
+        </div>
+    );
 }
+
+export default Cadastro
