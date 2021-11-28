@@ -37,6 +37,17 @@ const LoginForm = () => {
         localStorage.setItem("user-info", JSON.stringify(result));
     }
 
+    // Função para mostrar senha ao marcar checkbox
+    const mostrarSenha = () => {
+        document.getElementById('showPassword').onclick = function () {
+            if (this.checked) {
+                document.getElementById('password').type = "text";
+            } else {
+                document.getElementById('password').type = "password";
+            }
+        };
+    }
+
     return (
         <div className="container">
             <img src={imagemFundo} alt="Imagem de fundo" />
@@ -59,6 +70,7 @@ const LoginForm = () => {
                         <label>Senha</label>
                         <input
                             type="password"
+                            id="password"
                             value={password}
                             placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
@@ -67,7 +79,7 @@ const LoginForm = () => {
                         <p style={{ display: validarCampo }}>Campo obrigatório</p>
                     </div>
                     <div className="inputMostrarSenha">
-                        <input type="checkbox" name="mostrarSenha" />
+                        <input type="checkbox" name="mostrarSenha" id="showPassword" onClick={mostrarSenha} />
                         <span>Mostrar a senha</span>
                     </div>
                     <p>Problemas para acessar sua conta?</p>
