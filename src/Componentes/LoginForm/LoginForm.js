@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Logo from '../../imgs/logo.png'
 import imagemFundo from '../../imgs/bg.jpg'
 import iconemail from '../../imgs/mail.png'
@@ -9,22 +9,22 @@ import '../../index.css'
 
 const LoginForm = () => {
 
-    const [email, setEmail] = useState("");
+    const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
     const history = useNavigate();
     const [validarCampo, setValidarCampo] = useState("none");
 
     const inputLabel = (e) => {
-        setEmail(e.target.value);
+        setIdentifier(e.target.value);
         setPassword(e.target.value);
         setValidarCampo("none");
     }
-      
-    async function Cadastrar() {
+
+    async function Logando() {
 
         const { REACT_APP_BACKEND_URL_ID_LOGIN } = process.env;
 
-        let item = { email, password }
+        let item = { identifier, password }
         const result = await fetch(`${REACT_APP_BACKEND_URL_ID_LOGIN}`, {
             method: 'POST',
             headers: {
@@ -33,50 +33,52 @@ const LoginForm = () => {
             },
             body: JSON.stringify(item)
         });
-        result = await result.json();
-        localStorage.setItem("user-info",JSON.stringify(result));
+        result = await result.JSON();
+        localStorage.setItem("user-info", JSON.stringify(result));
     }
-    
+
     return (
         <div className="container">
-            <img src={imagemFundo} />
-                <div className="card-cadastro">
-                    <div className="cadastro">
-                        <img src={Logo} alt="Logo Orange" />
-                        {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
-                        <div className="inputLabel">
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                value={email}
-                                placeholder="seunome@email.com"
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <img src={iconemail} alt="Icon de Email" />
-                            <p style={{display:validarCampo}}>Campo obrigatório</p>
-                        </div>
-                        <div className="inputLabel">
-                            <label>Senha</label>
-                            <input
-                                type="password"
-                                value={password}
-                                placeholder="Password"
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <img src={iconpassword} alt="Icon de Password" />
-                            <p style={{display:validarCampo}}>Campo obrigatório</p>
-                        </div>
-                        <input type="checkbox" className="mostrarSenha" name="mostrarSenha" />
-                        <span>Mostrar a senha</span>
-                        <p>Problemas para acessar sua conta?</p>
-                        <button type="submit" onClick={Cadastrar}>Acessar</button>
-                        <div className="linha-login">
-                            <span>ou</span>
-                        </div>
-                        <button type="submit" onClick={Cadastrar} className="btn-login-cadastro">Cadastrar</button>
-                        <h4>Termos de Uso • Política de Privacidade</h4>
+            <img src={imagemFundo} alt="Imagem de fundo" />
+            <div className="card-cadastro">
+                <div className="cadastro">
+                    <img src={Logo} alt="Logo Orange" />
+                    {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
+                    <div className="inputLabel">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            value={identifier}
+                            placeholder="seunome@email.com"
+                            onChange={(e) => setIdentifier(e.target.value)}
+                        />
+                        <img src={iconemail} alt="Icon de Email" />
+                        <p style={{ display: validarCampo }}>Campo obrigatório</p>
                     </div>
+                    <div className="inputLabel">
+                        <label>Senha</label>
+                        <input
+                            type="password"
+                            value={password}
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <img src={iconpassword} alt="Icon de Password" />
+                        <p style={{ display: validarCampo }}>Campo obrigatório</p>
+                    </div>
+                    <div className="inputMostrarSenha">
+                        <input type="checkbox" name="mostrarSenha" />
+                        <span>Mostrar a senha</span>
+                    </div>
+                    <p>Problemas para acessar sua conta?</p>
+                    <button type="submit" onClick={Logando}>Acessar</button>
+                    <div className="linha-login">
+                        <span>ou</span>
+                    </div>
+                    <Link to="/cadastrar" style={{ textDecoration: 'none' }} className="btn-login-cadastro">Cadastrar</Link>
+                    <h4 className="termos-texto">Termos de Uso • Política de Privacidade</h4>
                 </div>
+            </div>
         </div>
     );
 }

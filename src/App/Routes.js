@@ -14,17 +14,11 @@ import PrivateRoute from '../App/PrivateRoute'
 <BrowserRouter>
     <Routes>
         <Route path="/" exact={true} element={<Home />} />
-        <Route exact path='/' element={<PrivateRoute/>}>
-            <Route path="/foods" element={<Foods />} />
-        </Route>
-        <Route exact path='/' element={<PrivateRoute/>}>
-            <Route path="/people" element={<People />} />
-        </Route>
-        <Route exact path='/' element={<PrivateRoute/>}>
-            <Route path="/places" element={<Places />} />
-        </Route> 
+        <Route path="/foods" element={<Foods />} />
+        <Route path="/people" element={<People />} />
+        <Route path="/places" element={<Places />} />
         <Route path="/cadastrar" element={<Cadastro />} />
-        <Route path="*" element={<Pagina404 />} />
+        <Route path="" element={<Pagina404 />} />
     </Routes>
 </BrowserRouter>
 );

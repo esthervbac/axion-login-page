@@ -36,7 +36,7 @@ const Cadastro = () => {
             },
             body: JSON.stringify(item)
         });
-        result = await result.json();
+        result = await result.JSON();
         localStorage.setItem("user-info",JSON.stringify(result));
     }
     
