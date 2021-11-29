@@ -1,24 +1,29 @@
-import React, { Component } from "react";
+import React, { history, store } from "react";
 import { NavLink } from 'react-router-dom';
 import Axios from 'axios'
 import '../../css/cabecalho.css'
 import logo from '../../imgs/logo.png'
 
 
-export default class Cabecalho extends Component {
-    
-    render() {
+const Cabecalho = () => {
+
+    const handleLogout = history => () => {
+        store.remove('loggedIn');
+        history.push('/');
+     }; 
         return (
             <div className="cabecalho">
                 <img src={logo} alt="Logo Orange" />
                     <nav>
                         <ul className="nav-links">
-                            <NavLink to="/foods" style={{ textDecoration: 'none' }} activeStyle={{ fontWeight: "700" }}><li>FOODS</li></NavLink>
-                            <NavLink to="/people" style={{ textDecoration: 'none' }} activeStyle={{ fontWeight: "700" }}><li>PEOPLE</li></NavLink>
-                            <NavLink to="/places" style={{ textDecoration: 'none' }} activeStyle={{ fontWeight: "700" }}><li>PLACES</li></NavLink>
+                            <NavLink to="/foods" style={{ textDecoration: 'none' }}><li>FOODS</li></NavLink>
+                            <NavLink to="/people" style={{ textDecoration: 'none' }}><li>PEOPLE</li></NavLink>
+                            <NavLink to="/places" style={{ textDecoration: 'none' }}><li>PLACES</li></NavLink>
+                            <NavLink to="/" style={{ textDecoration: 'none' }} onClick={handleLogout(history)}><li>LOGOUT</li></NavLink>
                         </ul>
                     </nav>
             </div>
         );
     }
-}
+
+    export default Cabecalho

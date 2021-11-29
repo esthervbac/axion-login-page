@@ -1,6 +1,23 @@
-import React from "react";
-import Routes from "../src/App/Routes"
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from '../src/Paginas/Home/Home'
+import Foods from '../src/Paginas/Foods/Foods'
+import Places from '../src/Paginas/Places/Places'
+import People from '../src/Paginas/People/People'
+import Pagina404 from '../src/Paginas/Pagina404/Pagina404'
+import Cadastro from '../src/Paginas/Cadastro/Cadastro'
 
-const App = () => <Routes />;
+const App = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" exact={true} element={<Home />} />
+                <Route path="/foods" element={<Foods />} /> 
+                <Route path="/people" element={<People />} /> 
+                <Route path="/places" element={<Places />} /> 
+            <Route path="/cadastrar" element={<Cadastro />} />
+            <Route path="*" element={<Pagina404 />} />
+        </Routes>
+    </BrowserRouter>
+);
 
 export default App;

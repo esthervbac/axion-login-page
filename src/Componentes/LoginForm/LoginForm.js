@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, history, store } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Logo from '../../imgs/logo.png'
 import imagemFundo from '../../imgs/bg.jpg'
@@ -12,6 +12,12 @@ const LoginForm = () => {
     const [identifier, setIdentifier] = useState("");
     const [password, setPassword] = useState("");
     const history = useNavigate();
+
+    useEffect(() => {
+        if (localStorage.getItem('user-info')) {
+            history.push("/foods")
+        }
+    }, [])
 
     async function Logando() {
 
@@ -27,13 +33,14 @@ const LoginForm = () => {
             body: JSON.stringify(item)
         });
         result = await result.JSON();
-        localStorage.setItem("user-info", JSON.stringify(result));
+        localStorage.setItem("user-info", JSON.stringify(result))
+        history.push("/cadastrar");
     }
 
     // Função para validar campos do formulário Login 
     const validarCamposLogin = () => {
-        
-        if ((identifier == "") && (password == "")) {
+
+        if ((identifier === "") && (password === "")) {
             alert("Todos os campos devem ser preenchidos!");
         }
     }

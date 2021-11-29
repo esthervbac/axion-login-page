@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink, useNavigate, redirectUser } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logo from '../../imgs/logo.png'
 import imagemFundo from '../../imgs/bg.jpg'
 import iconusername from '../../imgs/user.png'
@@ -10,18 +10,17 @@ import '../../index.css'
 
 const Cadastro = () => {
 
+    useEffect(() => {
+        if (localStorage.getItem('user-info')) {
+            history.push("/foods")
+        }
+
+    }, [])
+
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const history = useNavigate();
-    const [validarCampo, setValidarCampo] = useState("none");
-
-    const inputLabel = (e) => {
-        setUsername(e.target.value);
-        setEmail(e.target.value);
-        setPassword(e.target.value);
-        setValidarCampo("none");
-    }
 
     async function Cadastrar() {
 
@@ -37,64 +36,78 @@ const Cadastro = () => {
             body: JSON.stringify(item)
         });
         result = await result.JSON();
-        localStorage.setItem("user-info",JSON.stringify(result));
+        localStorage.setItem("user-info", JSON.stringify(result));
+        history.push("/foods")
     }
 
     // Função para validar campos do formulário Login 
     const validarCamposCadastro = () => {
-        
-        if ((username == "") && (email == "") && (password == "")) {
+
+        if ((username === "") && (email === "") && (password === "")) {
             alert("Todos os campos devem ser preenchidos!");
         } else {
             alert("Seu Cadastro foi realizado com sucesso!");
         }
     }
-    
+
+    // Função para mostrar senha ao marcar checkbox
+    const mostrarSenha = () => {
+        document.getElementById('showPassword').onclick = function () {
+            if (this.checked) {
+                document.getElementById('password').type = "text";
+            } else {
+                document.getElementById('password').type = "password";
+            }
+        };
+    }
+
     return (
         <div className="container">
-            <img src={imagemFundo} />
-                <div className="card-cadastro">
-                    <form className="cadastro" onSubmit={validarCamposCadastro}>
-                        <img src={Logo} alt="Logo Orange" />
-                        {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
-                        <div className="inputLabel">
-                            <label>Usuário</label>
-                            <input
-                                type="text"
-                                value={username}
-                                placeholder="Nome de Usuário"
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                            <img src={iconusername} alt="Icon de Username" />
-                            <p style={{display:validarCampo}}>Campo obrigatório</p>
-                        </div>
-                        <div className="inputLabel">
-                            <label>Email</label>
-                            <input
-                                type="email"
-                                value={email}
-                                placeholder="seunome@email.com"
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <img src={iconemail} alt="Icon de Email" />
-                            <p style={{display:validarCampo}}>Campo obrigatório</p>
-                        </div>
-                        <div className="inputLabel">
-                            <label>Senha</label>
-                            <input
-                                type="password"
-                                value={password}
-                                placeholder="Password"
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <img src={iconpassword} alt="Icon de Password" />
-                            <p style={{display:validarCampo}}>Campo obrigatório</p>
-                        </div>
-                        <button type="submit" onClick={Cadastrar}>Cadastrar</button>
-                        <NavLink to="/" className="link-login" style={{ textDecoration: 'none' }}>Faça seu Login Clicando Aqui</NavLink>
-                        <h4>Termos de Uso • Política de Privacidade</h4>
-                    </form>
-                </div>
+            <img src={imagemFundo} alt="Imagem de fundo" />
+            <div className="card-cadastro">
+                <form className="cadastro" onSubmit={validarCamposCadastro}>
+                    <img src={Logo} alt="Logo Orange" />
+                    {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
+                    <div className="inputLabel">
+                        <label>Usuário</label>
+                        <input
+                            type="text"
+                            value={username}
+                            placeholder="Nome de Usuário"
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                        <img src={iconusername} alt="Icon de Username" />
+                    </div>
+                    <div className="inputLabel">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            value={email}
+                            placeholder="seunome@email.com"
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <img src={iconemail} alt="Icon de Email" />
+                    </div>
+                    <div className="inputLabel">
+                        <label>Senha</label>
+                        <input
+                            type="password"
+                            id="password"
+                            value={password}
+                            placeholder="Password"
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                        <img src={iconpassword} alt="Icon de Password" />
+                    </div>
+                    <div className="inputMostrarSenha">
+                        <input type="checkbox" name="mostrarSenha" id="showPassword" onClick={mostrarSenha} />
+                        <span>Mostrar a senha</span>
+                    </div>
+                    <button type="submit" onClick={Cadastrar}>Cadastrar</button>
+                    <NavLink to="/" className="link-login" style={{ textDecoration: 'none' }}>Faça seu Login Clicando Aqui</NavLink>
+                    <h4>Termos de Uso • Política de Privacidade</h4>
+                </form>
+            </div>
         </div>
     );
 }
