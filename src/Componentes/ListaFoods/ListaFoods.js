@@ -14,10 +14,8 @@ export default class ListaFoods extends Component {
   // Fetch foods depois que o componente é montado
   componentDidMount = async () => {
 
-      const { REACT_APP_BACKEND_URL_ID_PAGF } = process.env;
-
         try {
-          const response = await axios.get(`${REACT_APP_BACKEND_URL_ID_PAGF}`);
+          const response = await axios.get(`http://localhost:1337/foods`);
           this.setState({ foods: response.data });
         } catch (error) {
         this.setState({ error });

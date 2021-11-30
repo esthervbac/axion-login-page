@@ -14,14 +14,12 @@ export default class LoginForm extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        const { REACT_APP_BACKEND_URL_ID_LOGIN } = process.env;
-
         const data = {
             identifier: this.identifier,
             password: this.password
         };
 
-        axios.post(`${REACT_APP_BACKEND_URL_ID_LOGIN}`, data).then(
+        axios.post(`http://localhost:1337/auth/local`, data).then(
             res => {
             }
         ).catch(

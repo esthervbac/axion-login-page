@@ -20,15 +20,13 @@ export default class Cadastrar extends Component {
     handleSubmit = (e) => {
         e.preventDefault();
 
-        const { REACT_APP_BACKEND_URL_ID_REGISTER } = process.env;
-
         const data = {
             username: this.username,
             email: this.email,
             password: this.password
         };
 
-        axios.post(`${REACT_APP_BACKEND_URL_ID_REGISTER}`, data).then(
+        axios.post(`http://localhost:1337/auth/local/register`, data).then(
             res => {
                 console.log(res)
             }

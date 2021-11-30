@@ -12,10 +12,8 @@ export default class ListaPlaces extends Component {
     // Fetch places depois que o componente é montado
     componentDidMount = async () => {
 
-        const { REACT_APP_BACKEND_URL_ID_PAGPL } = process.env;
-
     try {
-      const response = await axios.get(`${REACT_APP_BACKEND_URL_ID_PAGPL}`);
+      const response = await axios.get(`http://localhost:1337/places`);
       this.setState({ places: response.data });
     } catch (error) {
       this.setState({ error });
