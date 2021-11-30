@@ -49,7 +49,6 @@ export default class LoginForm extends Component {
                 <div className="card-cadastro">
                     <form className="cadastro" name="formulario" onSubmit={this.handleSubmit.bind(this)}>
                         <img src={Logo} alt="Logo Orange" />
-                        {/* <h2 className="user-info">Seu Cadastro foi realizado com sucesso!</h2> */}
                         <div className="inputLabel">
                             <label>Email</label>
                             <input
