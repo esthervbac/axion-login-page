@@ -168,3 +168,73 @@ h4.termos-texto {
     margin-left: 2.6vw;
     margin-top: 3vh;
 }
+
+
+/* Media Queries -------------------------------------------------*/
+
+@media screen and (max-width: 2560px) {
+    .card-cadastro {
+        height: 830px;   
+    }
+
+    .cadastro {
+        margin-left: -1vw;
+    }
+
+    .inputLabel {
+        margin-left: -0.5vw;
+    }
+
+    .inputLabel img {
+        bottom: -0.3vw;
+        right: 31px;
+    }
+
+    .inputMostrarSenha {
+        margin-left: -2vw;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -1vw;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -5vw;
+        margin-top: 0.5vh;
+    }
+
+    .cadastro button {
+        margin-left: 2vw;
+    }
+
+}
+
+@media screen and (max-width: 1920px) {
+
+    .cadastro {
+        margin-left: -0.3vw;
+    }
+
+    .cadastro input {
+        margin-top: 3.2vh;
+        margin-left: 2.6vw;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -3vw;
+        margin-top: 1vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -6vw;
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 5vh;
+    }
+}

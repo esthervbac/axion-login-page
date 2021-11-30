@@ -5,13 +5,13 @@ import ListaFoods from '../../Componentes/ListaFoods/ListaFoods'
 import '../../css/listas.css'
 
 export default class Foods extends Component {
-    
+
     render() {
-        return (
-            <>
-                <Cabecalho />
-                <ListaFoods />
-            </>
-        );
+            return (
+                <>
+                    <Cabecalho />
+                    <ListaFoods />
+                </>
+            );
+        }
     }
-}

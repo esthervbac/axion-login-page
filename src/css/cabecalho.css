@@ -48,26 +48,141 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 600px) {
-    .cabecalho {
-        height: 240px;
-        flex-direction: column;
+@media screen and (max-width: 2560px) {
+    .cabecalho img {
+      width: 13%;
+      margin-top: 3vh;
     }
+  
+    .cabecalho ul {
+      margin-top: 4vh;
+    }
+}
+
+@media screen and (max-width: 1334px) {
 
     .cabecalho img {
-        width: 40%;
-        margin-top: 5vh;
-        margin-left: 29vw;
+      margin-top: 4vh;
     }
+}
 
+@media screen and (max-width: 1024px) {
+    .cabecalho img {
+      margin-top: 7vh;
+    }
+  
     .cabecalho ul {
-        font-size: 23px;
-        margin-top: 10vh;
-        margin-left: 37vw;
-        flex-direction: column;
+      margin-top: 7vh;
+  }
+}
+
+@media screen and (max-width: 883px) {  
+    .cabecalho img {
+      margin-left: 41vh;
+      width: 18vw;
+    }
+  }
+
+  
+@media screen and (max-width: 768px) {
+    .cabecalho img {
+      margin-top: 4vh;
+      width: 22%;
+      margin-left: 7vw;
+    }
+    .cabecalho ul {
+      margin-top: 4vh;
+      margin-left: 42vw;
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+    .cabecalho img {
+      margin-top: 3vh;
+    }
+  
+    .cabecalho ul {
+      margin-top: 3vh;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .cabecalho img {
+      margin-top: 11vh;
+    }
+  
+    .cabecalho ul {
+      margin-top: 11vh;
+      margin-left: 39vw;
+  }
+}
+
+
+@media screen and (max-width: 653px) {
+    .cabecalho img {
+      margin-top: 15vh;
+    }
+  
+    .cabecalho ul {
+      margin-top: 14vh;
+      margin-left: 36vw;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .cabecalho {
+      height: 250px;
+    }
+  
+    .cabecalho img {
+      width: 31%;
+      margin-top: 2vh;
+      margin-left: 33vw;
+    }
+  
+    .cabecalho ul {
+      margin-top: 6vh;
+      margin-left: 38vw;
     }
 
-    .cabecalho li {
-        margin-bottom: 1.5vh;
+}
+
+@media screen and (max-width: 412px) {
+    .cabecaçho img {
+      width: 35%;
     }
+  
+    .cabecalho ul {
+      margin-left: 35vw;
+  }
+}
+
+@media screen and (max-width: 375px) {
+    .cabecalho img {
+      width: 37%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .cabecalho img {
+      width: 39%;
+    }
+  
+    .cabecalho ul {
+      margin-top: 8vh;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .cabecalho img {
+      width: 50%;
+      margin-left: 22vw;
+  }
+  
+  .cabecalho ul {
+    margin-top: 9vh;
+    margin-left: 30vw;
+  }
 }

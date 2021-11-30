@@ -21,7 +21,7 @@ const Cabecalho = () => {
                             <NavLink to="/places" style={{ textDecoration: 'none' }}><li>PLACES</li></NavLink>
                             <NavLink to="/" style={{ textDecoration: 'none' }} onClick={handleLogout(history)}><li>LOGOUT</li></NavLink>
                         </ul>
-                    </nav>
+                    </nav>   
             </div>
         );
     }
