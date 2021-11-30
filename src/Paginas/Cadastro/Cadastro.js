@@ -7,6 +7,7 @@ import iconusername from '../../imgs/user.png'
 import iconemail from '../../imgs/mail.png'
 import iconpassword from '../../imgs/lock.png'
 import '../../css/cadastro.css'
+import '../../css/home.css'
 import '../../index.css'
 
 

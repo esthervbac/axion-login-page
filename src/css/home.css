@@ -25,6 +25,8 @@
     .container img {
         margin-top: 4%;
     }
+}
 
-    
+@media screen and (max-width: 600px) { 
+ 
 }

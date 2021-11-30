@@ -158,3 +158,428 @@ h4 {
     margin-left: 2.6vw;
     margin-top: 8vh;
 }
+
+/* Media Queries -------------------------------------------------*/
+
+@media screen and (max-width: 2560px) {
+    .card-cadastro {
+        height: 830px;   
+    }
+
+    .cadastro {
+        margin-left: -1vw;
+    }
+
+    .inputLabel {
+        margin-left: -0.5vw;
+    }
+
+    .inputLabel img {
+        bottom: -0.3vw;
+        right: 31px;
+    }
+
+    .inputMostrarSenha {
+        margin-left: -2vw;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -1vw;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -5vw;
+        margin-top: 0.5vh;
+    }
+
+    .cadastro button {
+        margin-left: 2vw;
+    }
+
+}
+
+@media screen and (max-width: 1920px) {
+
+    .cadastro {
+        margin-left: -0.3vw;
+    }
+
+    .cadastro input {
+        margin-top: 3.2vh;
+        margin-left: 2.6vw;
+    }
+
+    .inputLabel img {
+        right: 54px;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -3vw;
+        margin-top: 1vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -6.7vw;
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 5vh;
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .cadastro {
+        margin-left: 0.4vw;
+    }
+
+    .inputLabel {
+        margin-left: -0.5vw;
+        margin-bottom: 7.1vh;
+    }
+
+    .inputLabel img {
+        right: 68px;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -5vw;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -8.9vw;
+        margin-top: 0.8vh;
+    }
+
+    .cadastro button {
+        margin-left: 2vw;
+    }
+
+    .linha-login {
+        margin-left: 2.4vw;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 4vh;
+    }
+}
+
+@media screen and (max-width: 1336px) {
+    .inputLabel {
+        margin-bottom: 6.1vh;
+        margin-top: -1vh;
+    }
+
+    .cadastro input {
+        margin-top: 1.7vh;
+        margin-left: 2.6vw;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -6vw;
+        margin-top: -2vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -9.5vw;
+        margin-top: -2.2vh;
+    }
+
+    p {
+        margin-top: -1vh;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 3vh;
+        margin-top: 4vh;
+    }
+}
+
+
+@media screen and (max-width: 1280px) {
+    .cadastro {
+        margin-left: 0.6vw;
+    }
+
+    .inputLabel {
+        margin-bottom: 6vh;
+        margin-top: 1vh;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -7vw;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -9.9vw;
+    }
+    
+}
+
+@media screen and (max-width: 1076px) { 
+    .card-cadastro {
+        height: 750px;
+    }
+
+    .cadastro {
+        margin-left: 1.4vw;
+    }
+
+    .inputLabel img {
+        bottom: -0.8vw;
+        right: 79px;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -9vw;
+        margin-top: 0vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-top: -0.2vh;
+        margin-left: -11.9vw;
+    }
+
+    p {
+        margin-top: 1vh;
+    }
+}
+
+@media screen and (max-width: 1024px) { 
+    .card-cadastro {
+        height: 700px;
+    }
+
+    .inputLabel img {
+        bottom: -0.7vw;
+        right: 79px;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -9vw;
+        margin-top: 2vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -12.9vw;
+        margin-top: 1.8vh;
+    }
+
+}
+
+@media screen and (max-width: 960px) {  
+    .inputLabel {
+        margin-left: 0.5vw;
+        margin-bottom: 6vh;
+        margin-top: 4vh;
+    }
+
+    p {
+        margin-top: 2vh;
+    }
+}
+
+@media screen and (max-width: 883px) {
+    .card-cadastro {
+        height: 600px;
+    }
+         
+    .inputMostrarSenha input {
+        margin-left: -11vw;
+        margin-top: 7vh;
+    }
+
+    p {
+        margin-top: 4vh;
+        margin-left: 3.6vw;
+    }
+
+    .cadastro button {
+        margin-left: 3vw;
+        margin-top: 5vh;
+    }
+
+    .linha-login {
+        margin-left: 3.4vw;
+        margin-top: 8vh;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 7vh;
+        margin-top: 7vh;
+    }
+}
+
+
+@media screen and (max-width: 768px) { 
+    .card-cadastro {
+        height: 840px;
+    }
+
+    .cadastro {
+        margin-left: 3.6vw;
+    }
+
+    .inputLabel {
+        display: flex;
+    }
+
+    .cadastro label {
+        margin-top: -0.4vh;
+        margin-left: 2.5vw;
+    }
+
+    .cadastro input {
+        margin-top: 3vh;
+        margin-left: -6vw;
+    }
+
+    .inputLabel img {
+        right: 91px;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -14vw;
+        margin-top: -1vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -15.9vw;
+        margin-top: -1.2vh;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 2vh;
+    }
+}
+
+@media screen and (max-width: 600px) { 
+    .card-cadastro {
+        margin-left: 17.4vh;
+        height: 800px;
+    }
+
+    .cadastro {
+        margin-left: 2vw;
+    }
+
+    .inputLabel {
+        display: flex;
+    }
+
+    .cadastro label {
+        margin-top: -0.4vh;
+        margin-left: 5.6vw;
+    }
+
+    .cadastro input {
+        margin-top: 5.2vh;
+        margin-left: -7.4vw;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -16vw;
+        margin-top: 2vh;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -21.9vw;
+        margin-top: 1.8vh;
+    }
+
+    p {
+        margin-left: 5.6vw;
+    }
+
+    .cadastro button {
+        margin-left: 4vw;
+    }
+
+    .linha-login {
+        margin-left: 4.4vw;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 5vh;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .card-cadastro {
+        margin-left: 2.4vh;
+        height: 900px;
+        width: 89%;
+    }
+
+    .cadastro {
+        margin-left: -3vw;
+    }
+
+    .cadastro img {
+        margin-left: 9.7vw;
+    }
+
+    .cadastro label {
+        margin-top: -0.4vh;
+        margin-left: 9.6vw;
+    }
+
+    .cadastro input {
+        margin-top: 5.2vh;
+        margin-left: -11.3vw;
+    }
+
+    .inputLabel img {
+        right: 35px;
+        bottom: -1.7vw;
+    }
+
+    .inputMostrarSenha input {
+        margin-left: -22vw;
+    }
+
+    .inputMostrarSenha span {
+        margin-left: -30.9vw;
+    }
+
+    p {
+        margin-left: 10.6vw;
+    }
+
+    .cadastro button {
+        margin-left: 7vw;
+    }
+
+    .linha-login {
+        margin-left: 11.4vw;
+    }
+
+    .btn-login-cadastro {
+        margin-left: 3vh;
+    }
+
+    h4.termos-texto {
+        margin-left: 7.6vw;
+    }
+ }
+ @media screen and (max-width: 280px) { 
+    .cadastro {
+        margin-left: -7vw;
+    }
+
+    .cadastro label {
+        margin-top: -0.4vh;
+        margin-left: 12.6vw;
+    }
+
+    .cadastro input {
+       width: 88%;
+       margin-top: 5.2vh;
+        margin-left: -17.3vw;
+       
+   }
+}

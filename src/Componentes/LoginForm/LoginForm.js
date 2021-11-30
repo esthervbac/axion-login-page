@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios'
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from '../../imgs/logo.png'
 import imagemFundo from '../../imgs/bg.jpg'
 import iconemail from '../../imgs/mail.png'
@@ -23,7 +23,6 @@ export default class LoginForm extends Component {
 
         axios.post(`${REACT_APP_BACKEND_URL_ID_LOGIN}`, data).then(
             res => {
-                Navigate('foods')
             }
         ).catch(
             err => {
